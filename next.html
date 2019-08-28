@@ -70,7 +70,7 @@
             }
             body {
                 min-height: 100vh;
-                background: #1E1C1E;
+                background: #181818;
                 font-family: 'Hepta Slab', -apple-system, sans-serif;
                 font-size: 16px;
                 line-height: 1.6;
@@ -157,6 +157,12 @@
             .bullet.color-work {
                 background: #e9860c;
             }
+            .black-bg {
+                /* Background pattern from Toptal Subtle Patterns */
+                /* https://www.toptal.com/designers/subtlepatterns/ */
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAUklEQVQ4y+3MMQ4AIAhDUQ/g5KK797+jCV1ISA0G2PwrvLYuTWk5widUC+EheSY0g4rhLd0nLIOKYZzZBGNQGZhNMJaN7QRjNVhPMFaJPX382AFpIWzZF2qBVwAAAABJRU5ErkJggg==);
+                background-size: 10px 10px;
+            }
 
             @media only screen and (max-width: 812px) {
                 h1 {
@@ -175,32 +181,34 @@
         </style>
     </head>
     <body>
-        <section id="about">
-            <article>
-                <h1 class="color-work">Hallo!</h1>
-                <p>I'm a full stack software developer from
-                    <svg class="flag-img" width="20" height="14" viewBox="0 100 500 300" xmlns="http://www.w3.org/2000/svg"><path d="M34 399.003s6.871 12.255 75 20.999c65.273 8.376 161.747-26.41 241-33.999 67.511-6.466 126 13 126 13v-137s-39.856-15.942-78-18.002c-68.147-3.682-165.58 26.078-246 34.001C88.813 284.227 34 262 34 262v137.003z" fill="#21468b"/><path d="M34 309.003s6.871 12.255 75 20.999c65.273 8.376 161.747-26.41 241-34 67.511-6.465 126 13.001 126 13.001v-115S436.144 178.061 398 176c-68.147-3.681-165.58 26.078-246 34.001-63.187 6.226-118-15.998-118-15.998v115z" fill="#fff"/><path d="M34 216.004s6.871 12.255 75 20.999c65.273 8.375 161.747-26.41 241-34 67.511-6.465 126 13.001 126 13.001v-93.958s-39.856-15.939-78-18c-68.147-3.681-165.58 26.078-246 34.001-63.187 6.226-118-16.043-118-16.043v94z" fill="#ae1d28"/><defs><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="33.947" y1="257.67" x2="478.947" y2="257.67"><stop offset="0"/><stop offset=".448" stop-color="#fff"/><stop offset=".817"/><stop offset="1" stop-color="#fff"/></linearGradient></defs><path d="M34 399.004s6.871 12.255 75 20.999c65.273 8.375 161.747-26.41 241-34 67.511-6.465 126 13.001 126 13.001V122.001s-39.856-15.939-78-18c-68.147-3.681-165.58 26.078-246 34.001-63.187 6.226-118-16.998-118-16.998v278z" fill-opacity=".302" fill="url(#a)"/></svg>
-                    the Netherlands.
-                    I enjoy building web applications,
-                    that's what I'm doing <span class="color-work">full-time</span> at Booking.com.
-                    In my free time I contribute to <span class="color-open-source">open-source</span>.
-                </p>
-            </article>
-        </section>
+        <div class="black-bg">
+            <section id="about">
+                <article>
+                    <h1 class="color-work">Hallo!</h1>
+                    <p>I'm a full stack software developer from
+                        <svg class="flag-img" width="20" height="14" viewBox="0 100 500 300" xmlns="http://www.w3.org/2000/svg"><path d="M34 399.003s6.871 12.255 75 20.999c65.273 8.376 161.747-26.41 241-33.999 67.511-6.466 126 13 126 13v-137s-39.856-15.942-78-18.002c-68.147-3.682-165.58 26.078-246 34.001C88.813 284.227 34 262 34 262v137.003z" fill="#21468b"/><path d="M34 309.003s6.871 12.255 75 20.999c65.273 8.376 161.747-26.41 241-34 67.511-6.465 126 13.001 126 13.001v-115S436.144 178.061 398 176c-68.147-3.681-165.58 26.078-246 34.001-63.187 6.226-118-15.998-118-15.998v115z" fill="#fff"/><path d="M34 216.004s6.871 12.255 75 20.999c65.273 8.375 161.747-26.41 241-34 67.511-6.465 126 13.001 126 13.001v-93.958s-39.856-15.939-78-18c-68.147-3.681-165.58 26.078-246 34.001-63.187 6.226-118-16.043-118-16.043v94z" fill="#ae1d28"/><defs><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="33.947" y1="257.67" x2="478.947" y2="257.67"><stop offset="0"/><stop offset=".448" stop-color="#fff"/><stop offset=".817"/><stop offset="1" stop-color="#fff"/></linearGradient></defs><path d="M34 399.004s6.871 12.255 75 20.999c65.273 8.375 161.747-26.41 241-34 67.511-6.465 126 13.001 126 13.001V122.001s-39.856-15.939-78-18c-68.147-3.681-165.58 26.078-246 34.001-63.187 6.226-118-16.998-118-16.998v278z" fill-opacity=".302" fill="url(#a)"/></svg>
+                        the Netherlands.
+                        I enjoy building web applications,
+                        that's what I'm doing <span class="color-work">full-time</span> at Booking.com.
+                        In my free time I contribute to <span class="color-open-source">open-source</span>.
+                    </p>
+                </article>
+            </section>
 
-        <section id="contact">
-            <article>
-                <h1>Contact</h1>
-                <p>E-mail: <a href="mailto:antelle.net@gmail.com">antelle.net@gmail.com</a>.</p>
-                <p>GitHub: <a href="https://github.com/antelle">github.com/antelle</a>.</p>
-            </article>
-        </section>
+            <section id="contact">
+                <article>
+                    <h1>Contact</h1>
+                    <p>E-mail: <a href="mailto:antelle.net@gmail.com">antelle.net@gmail.com</a>.</p>
+                    <p>GitHub: <a href="https://github.com/antelle">github.com/antelle</a>.</p>
+                </article>
+            </section>
 
-        <section>
             <article id="open-source">
                 <h1>Things I created <span class="color-open-source">myself</span></h1>
             </article>
+        </div>
 
+        <section>
             <article id="keeweb" class="project" style="background-color: #6386ec">
                 <h2>keeweb</h2>
                 <p>Password manger compatible with KeePass. Available as a web application
@@ -311,7 +319,7 @@
             </article>
         </section>
 
-        <section>
+        <section class="black-bg">
             <article id="end">
                 <h1>Whoops, you've <span style="color: rgba(25,168,13,0.91)">scrolled</span> too much,
                     that's <span style="color: #f1313e">all</span>!</h1>

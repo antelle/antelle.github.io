@@ -192,9 +192,29 @@
             <section id="contact">
                 <article>
                     <h1>Contact</h1>
-                    <p>E-mail: <a href="mailto:antelle.net@gmail.com">antelle.net@gmail.com</a>.</p>
-                    <p>GitHub: <a href="https://github.com/antelle">github.com/antelle</a>.</p>
+                    <p>E-mail: <a href="" id="email"
+                        data-piece="667666626674666662666"
+                    >[please enable JavaScript to see the email]</a>.</p>
+                    <p>GitHub: <a href="https://github.com/antelle" class="gh"
+                        data-piece="1e45cc5ee5407d19ce3fd"
+                    >github.com/antelle</a>.</p>
                 </article>
+                <script id="sc">
+                    (function() {
+                        var emailEl = document.getElementById('email');
+                        var linkEl = document.getElementsByClassName('gh')[0];
+                        var pieces = [emailEl.getAttribute('data-piece'), linkEl.getAttribute('data-piece')];
+                        var result = '';
+                        for (var i = 0; i < pieces[0].length; i++) {
+                            result += String.fromCharCode(parseInt(pieces[0].charAt(i) + pieces[1].charAt(i), 16));
+                        }
+                        emailEl.innerHTML = result;
+                        emailEl.href = 'mailto:' + result;
+                        emailEl.removeAttribute('data-piece');
+                        linkEl.removeAttribute('data-piece');
+                        linkEl.removeAttribute('class');
+                    }());
+                </script>
             </section>
 
             <article id="open-source">
@@ -340,40 +360,42 @@
         </div>
 
         <script>
-            document.querySelector('.scroll-to-top').addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo(0, 0);
-            });
+            (function() {
+                document.querySelector('.scroll-to-top').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.scrollTo(0, 0);
+                });
 
-            if (window.getComputedStyle(document.querySelector('.bullets')).display !== 'none') {
-                var bullets = [];
-                var bulletEls = document.querySelectorAll('.bullets .bullet');
-                for (var i = 0; i < bulletEls.length; i++) {
-                    var bullet = bulletEls[i];
-                    if (bullet.hash) {
-                        var section = document.querySelector(bullet.hash);
-                        if (section) {
-                            bullets.push({bullet: bullet, section: section});
-                        }
-                    }
-                }
-
-                var activeBullet = 0;
-                document.addEventListener('scroll', function () {
-                    for (var i = 0; i < bullets.length; i++) {
-                        var bulletConfig = bullets[i];
-                        var clientRect = bulletConfig.section.getBoundingClientRect();
-                        if (clientRect.top <= 0 && clientRect.bottom > 0) {
-                            if (activeBullet !== i) {
-                                bullets[activeBullet].bullet.classList.remove('active');
-                                activeBullet = i;
-                                bulletConfig.bullet.classList.add('active');
+                if (window.getComputedStyle(document.querySelector('.bullets')).display !== 'none') {
+                    var bullets = [];
+                    var bulletEls = document.querySelectorAll('.bullets .bullet');
+                    for (var i = 0; i < bulletEls.length; i++) {
+                        var bullet = bulletEls[i];
+                        if (bullet.hash) {
+                            var section = document.querySelector(bullet.hash);
+                            if (section) {
+                                bullets.push({bullet: bullet, section: section});
                             }
-                            break;
                         }
                     }
-                }, {passive: true});
-            }
+
+                    var activeBullet = 0;
+                    document.addEventListener('scroll', function () {
+                        for (var i = 0; i < bullets.length; i++) {
+                            var bulletConfig = bullets[i];
+                            var clientRect = bulletConfig.section.getBoundingClientRect();
+                            if (clientRect.top <= 0 && clientRect.bottom > 0) {
+                                if (activeBullet !== i) {
+                                    bullets[activeBullet].bullet.classList.remove('active');
+                                    activeBullet = i;
+                                    bulletConfig.bullet.classList.add('active');
+                                }
+                                break;
+                            }
+                        }
+                    }, {passive: true});
+                }
+            }());
         </script>
     </body>
 </html>

@@ -396,7 +396,7 @@
                         for (var i = 0; i < bullets.length; i++) {
                             var bulletConfig = bullets[i];
                             var clientRect = bulletConfig.section.getBoundingClientRect();
-                            if (clientRect.top <= 0 && clientRect.bottom > 0) {
+                            if (Math.round(clientRect.top) <= 0 && Math.round(clientRect.bottom) > 0) {
                                 if (activeBullet !== i) {
                                     bullets[activeBullet].bullet.classList.remove('active');
                                     activeBullet = i;

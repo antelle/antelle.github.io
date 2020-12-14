@@ -1,10 +1,7 @@
 name: Update
 on:
-  push:
-    branches:
-      - '*'
-#  schedule:
-#    - cron: '* * * * *'
+  schedule:
+    - cron: '0 10 * * 6'
 jobs:
 
   web:

@@ -1,7 +1,10 @@
-name: Build
+name: Update
 on:
-  schedule:
-    - cron: '* * * * *'
+  push:
+    branches:
+      - '*'
+#  schedule:
+#    - cron: '* * * * *'
 jobs:
 
   web:
